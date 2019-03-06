@@ -1,0 +1,49 @@
+#titleBox{
+    background-color: green 
+}
+
+#instructionsBox{
+background-color: blue
+}
+
+#randomNumberBox{
+background-color: brown;
+width: 25%;
+height: 200px;
+}
+
+#winLoseBox{
+background-color: aqua;
+width: 25%;
+height: 25%;
+font-size: 40px;
+
+
+}
+
+#parentGameButtons{
+background-color: red;
+}
+
+.box{
+background-color: orange;
+height: 15%;
+width: 15%;
+float: left;
+border-color: black;
+border: 1%;
+}
+
+
+
+img{
+    height: 200px;
+    width: 200px;
+    
+}
+
+#playerScore {
+    background-color: aqua;
+    font-size: 40px;
+    clear: both;
+}
