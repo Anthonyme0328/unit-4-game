@@ -3,13 +3,15 @@
 }
 
 #instructionsBox{
-background-color: blue
+background-color: blue;
+font-size: 25px;
 }
 
 #randomNumberBox{
-background-color: brown;
+background-color: khaki;
 width: 25%;
-height: 200px;
+height: 125px;
+font-size: 80px;
 }
 
 #winLoseBox{
@@ -17,6 +19,7 @@ background-color: aqua;
 width: 25%;
 height: 25%;
 font-size: 40px;
+
 
 
 }
@@ -30,20 +33,20 @@ background-color: orange;
 height: 15%;
 width: 15%;
 float: left;
-border-color: black;
-border: 1%;
+
 }
-
-
 
 img{
     height: 200px;
     width: 200px;
+    margin-top: 4px;
+    margin-left: 10px;
     
 }
 
 #playerScore {
-    background-color: aqua;
+    background-color: rgb(162, 0, 255);
     font-size: 40px;
     clear: both;
+    width:25%;
 }

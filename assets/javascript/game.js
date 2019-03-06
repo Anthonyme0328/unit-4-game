@@ -1,101 +1,82 @@
 // all my global variables
-
-    var ruby1= Math.floor(Math.random() * (12 - 1) + 1);
-    var diamond2= Math.floor(Math.random() * (12 - 1) + 1);
-    var emerald3= Math.floor(Math.random() * (12 - 1) + 1);
-    var yellowgem4= Math.floor(Math.random() * (12 - 1) + 1);
+var ruby1 = Math.floor(Math.random() * (12 - 1) + 1);
+var diamond2 = Math.floor(Math.random() * (12 - 1) + 1);
+var emerald3 = Math.floor(Math.random() * (12 - 1) + 1);
+var yellowgem4 = Math.floor(Math.random() * (12 - 1) + 1);
 
 // win lose counter and a variable for the final score
+var wins = 0;
+var losses = 0;
+var totalScoreAdded;
 
-    var wins = 0;
-    var losses = 0;
-    var totalScoreAdded;
+// resets all random values for each game
+function resetVals() {
+    randNum = Math.floor(Math.random() * (120 - 19) + 19);
+    ruby1 = Math.floor(Math.random() * (12 - 1) + 1);
+    diamond2 = Math.floor(Math.random() * (12 - 1) + 1);
+    emerald3 = Math.floor(Math.random() * (12 - 1) + 1);
+    yellowgem4 = Math.floor(Math.random() * (12 - 1) + 1)
+    finalScore = 0;
+
+// gives you a new random number at begin of each new game 
+    $("#randomNumberBox").html(randNum);
+    $("#playerScore").html(finalScore);
+    beginGame();
+}
+// game begining function
+function beginGame() {
+    randNum = Math.floor(Math.random() * (120 - 19) + 19);
+    crys1 = Math.floor(Math.random() * (12 - 1) + 1);
+    crys2 = Math.floor(Math.random() * (12 - 1) + 1);
+    crys3 = Math.floor(Math.random() * (12 - 1) + 1);
+    crys4 = Math.floor(Math.random() * (12 - 1) + 1)
+    finalScore = 0;
+// sets the number you need to match in the box, give new number at begin of each game
+    $("#randomNumberBox").html(randNum);
+    $("#playerScore").html(finalScore);
+}
+
+//assigns random number to each gem in the game : ruby
+$(".ruby_red").attr("value", ruby1);
 
 
-    function resetVals()
-	{
-		//reset
-		 randNum = Math.floor(Math.random() * (120 - 19) + 19);
-		 console.log("randomNumber =  " + randNum);
-		 ruby1 = Math.floor(Math.random() * (12 - 1) + 1);
-		 diamond2 = Math.floor(Math.random() * (12 - 1) + 1);
-		 emerald3 = Math.floor(Math.random() * (12 - 1) + 1);
-		 yellowgem4 = Math.floor(Math.random() * (12 - 1) + 1)
-		 finalScore = 0;
+//assigns random number to each gem in the game : diamond
+$(".diamond_blue").attr("value", diamond2);
 
-		 //HTML
-		 $("#randomNumberBox").html(randNum);
-		 $("#playerScore").html(finalScore);
-		 beginGame();
+
+//assigns random number to each gem in the game : emerald
+$(".emerald_green").attr("value", emerald3);
+
+
+//assigns random number to each gem in the game : the yellow gem
+$(".theYellowOne_yellow").attr("value", yellowgem4);
+
+
+
+//when clicked saves score and makes it a number
+$(".box").on("click", function () {
+    var values = $(this).attr('value');
+//Adds to the score when clicked
+    finalScore = parseInt(finalScore) + parseInt(values);
+    $("#playerScore").html(finalScore);
+
+// when your number is equal to the number you need to match gives you 1 win writes it on the page
+    if (randNum === finalScore) {
+        wins++;
+        $("#win").html("wins : " + wins);
+        $("#playerScore").html(0);
+        resetVals();
     }
-    
-    function beginGame()
-	{
-		 //reset
-		 randNum = Math.floor(Math.random() * (120 - 19) + 19);
-		 console.log("randomNumber =  " + randNum);
-		 crys1 = Math.floor(Math.random() * (12 - 1) + 1);
-		 crys2 = Math.floor(Math.random() * (12 - 1) + 1);
-		 crys3 = Math.floor(Math.random() * (12 - 1) + 1);
-		 crys4 = Math.floor(Math.random() * (12 - 1) + 1)
-		 finalScore = 0;
-
-		 //HTML
-		 $("#randomNumberBox").html(randNum);
-         $("#playerScore").html(finalScore);
+// when your number is more than what you need to match adds 1 to lose writes it on the page
+    else if (finalScore >= randNum) {
+        losses++;
+        $("#loss").html("losses : " + losses);
+        $("#playerScore").html(0);
+        resetVals();
     }
 
-    //assigns random number to each gem in the game
-		$(".ruby_red").attr("value", ruby1);
-        var test = $(".ruby_red").attr("value");
-        //Test / Debug
-        console.log(".ruby_red" + test);
-
-    $(".diamond_blue").attr("value", diamond2);
-    var test = $(".diamond_blue").attr("value");
-    //Test / Debug
-    console.log(".diamond_blue" + test);
-
-    $(".emerald_green").attr("value", emerald3);
-    var test = $(".emerald_green").attr("value");
-    //Test / Debug
-    console.log(".emerald_green" + test);
-
-    $(".theYellowOne_yellow").attr("value", yellowgem4);
-    var test = $(".theYellowOne_yellow").attr("value");
-    //Test / Debug
-    console.log(".theYellowOne_yellow"+ test);
-
-    //When clicked saves to Final score
-        //added the .off() because it will repeat the click twice without it and save the last number that
-        // was clicked and push it to the total score during the next game.
-    $(".box").off().on("click", function()
-    {
-        var test1 = $(this).attr('value');
-        //Adds to final score when clicked
-        finalScore = parseInt(finalScore) + parseInt(test1);
-        console.log("Crystal*  " +  test1);
-        console.log("finalScore***  " + finalScore);
-        $("#playerScore").html(finalScore);
-
-        if(randNum === finalScore)
-        {
-            win++;
-            $("#win").html(win);
-            $("#playerScore").html(0);
-            resetVals();
-            
-        }
-        else if (finalScore >= randNum)
-        {
-            loss++;
-            $("#loss").html(loss);
-            $("#playerScore").html(0);
-            resetVals();
-        }
-
-    })
+})
 
     ;
-
-    beginGame()
+// calls the beginGame function
+beginGame()
