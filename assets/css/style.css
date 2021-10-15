@@ -1,39 +1,52 @@
+body{
+    background: linear-gradient(red, blue, green, yellow);
+}
+
 #titleBox{
-    background-color: green 
+    background: linear-gradient(red, blue, green, yellow);
 }
 
 #instructionsBox{
-background-color: blue;
-font-size: 25px;
+    background: linear-gradient(red, blue, green, yellow);;
+    font-size: 25px;
 }
 
 #randomNumberBox{
-background-color: khaki;
-width: 25%;
-height: 125px;
-font-size: 80px;
+    background: linear-gradient(red, blue, green, yellow);
+    width: 25%;
+    height: 125px;
+    font-size: 80px;
 }
 
 #winLoseBox{
-background-color: aqua;
-width: 25%;
-height: 25%;
-font-size: 40px;
-
-
-
-}
-
-#parentGameButtons{
-background-color: red;
+    background: linear-gradient(red, blue, green, yellow);
+    width: 25%;
+    height: 25%;
+    font-size: 40px;
 }
 
 .box{
-background-color: orange;
-height: 15%;
-width: 15%;
-float: left;
+    margin: 10px;
+    padding: 5px;
+    height: 15%;
+    width: 15%;
+    float: left;
+}
 
+.ruby_red{
+    background: red;
+}
+
+.diamond_blue{
+    background:blue;
+}
+
+.emerald_green{
+    background: green;
+}
+
+.theYellowOne_yellow{
+    background:yellow;
 }
 
 img{
@@ -41,12 +54,12 @@ img{
     width: 200px;
     margin-top: 4px;
     margin-left: 10px;
-    
 }
 
 #playerScore {
-    background-color: rgb(162, 0, 255);
+    background: linear-gradient(red, blue, green, yellow);
     font-size: 40px;
     clear: both;
     width:25%;
+    
 }
