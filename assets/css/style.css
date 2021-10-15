@@ -4,6 +4,7 @@ body{
 
 #titleBox{
     background: linear-gradient(red, blue, green, yellow);
+    text-align: center;
 }
 
 #instructionsBox{
@@ -12,25 +13,30 @@ body{
 }
 
 #randomNumberBox{
+    margin: auto;
     background: linear-gradient(red, blue, green, yellow);
     width: 25%;
     height: 125px;
     font-size: 80px;
+    text-align: center;
 }
 
 #winLoseBox{
+    margin: auto;
     background: linear-gradient(red, blue, green, yellow);
     width: 25%;
     height: 25%;
     font-size: 40px;
+    text-align: center;
 }
 
 .box{
-    margin: 10px;
+    margin: 15px;
     padding: 5px;
     height: 15%;
     width: 15%;
     float: left;
+
 }
 
 .ruby_red{
@@ -57,9 +63,11 @@ img{
 }
 
 #playerScore {
+    margin: auto;
     background: linear-gradient(red, blue, green, yellow);
     font-size: 40px;
     clear: both;
     width:25%;
+    text-align: center;
     
 }
